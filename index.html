@@ -1470,6 +1470,65 @@
             color: var(--gold);
         }
 
+        .top-bar {
+    background: #0A1E3D;
+    color: white;
+    font-size: 13px;
+    padding: 8px 0;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar-left {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.top-bar a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.top-bar a:hover {
+    opacity: 1;
+}
+
+.navbar {
+    background: white;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.nav-brand-icon {
+    font-size: 34px; /* emoji size control */
+    line-height: 1;
+}
+
+.nav-brand-text h1 {
+    font-size: 16px;
+    margin: 0;
+    color: #0A1E3D;
+    font-weight: 600;
+}
+
+.nav-brand-text span {
+    font-size: 12px;
+    color: #666;
+}
+
         /* ===== BACK TO TOP ===== */
         .back-to-top {
             position: fixed;
@@ -1611,50 +1670,46 @@
 </head>
 <body>
 
-    <!-- ===== TOP BAR ===== -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="top-bar-left">
-                <span>🇸 Official Government Portal</span>
-                <a href="mailto:info@moi-southsudan.org">📧 info@moi-southsudan.org</a>
-                <a href="tel:+211912345678">📞 +211 912 345 678</a>
-            </div>
-                </div>
-            </div>
+
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+    <div class="container">
+
+        <div class="top-bar-left">
+            <span>🏛️ Official Government Portal</span>
+
+            <a href="mailto:info@moi-southsudan.org">
+                📧 info@moi-southsudan.org
+            </a>
+
+            <a href="tel:+211912345678">
+                📞 +211 912 345 678
+            </a>
         </div>
+
     </div>
+</div>
 
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <a href="#" class="nav-brand">
-    
-    <!-- Logo -->
-    <div class="nav-brand-icon">
-        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="48" fill="#0A1E3D" stroke="#C5A059" stroke-width="3"/>
-            
-            <path d="M20 35 L50 20 L80 35 L75 65 L50 80 L25 65 L20 35Z"
-                fill="#132D5E" stroke="#C5A059" stroke-width="2"/>
-            
-            <rect x="28" y="42" width="44" height="10" fill="#C5A059" />
-            <rect x="28" y="52" width="44" height="10" fill="#C5A059" />
-            
-            <circle cx="50" cy="50" r="8" fill="#FFFFFF" />
-            
-            <path d="M45 45 L50 38 L55 45 L62 50 L55 55 L50 62 L45 55 L38 50 L45 45Z"
-                fill="#C5A059" />
-        </svg>
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+
+        <!-- BRAND -->
+        <a href="#" class="nav-brand">
+
+            <!-- LOGO (EMOJI) -->
+            <div class="nav-brand-icon">🏛️</div>
+
+            <!-- TEXT -->
+            <div class="nav-brand-text">
+                <h1>Ministry of Interior</h1>
+                <span>Republic of South Sudan</span>
+            </div>
+
+        </a>
+
     </div>
-
-    <!-- Text -->
-    <div class="nav-brand-text">
-        <h1>Ministry of Interior</h1>
-        <span>Republic of South Sudan</span>
-    </div>
-
-</a>
-
+</nav>
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
@@ -1860,7 +1915,18 @@
                         <div class="icon">
                             <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" fill="#0A1E3D" stroke="#C5A059" stroke-width="3"/><path d="M20 35 L50 20 L80 35 L75 65 L50 80 L25 65 L20 35Z" fill="#132D5E" stroke="#C5A059" stroke-width="2"/><rect x="28" y="42" width="44" height="10" fill="#C5A059"/><rect x="28" y="52" width="44" height="10" fill="#C5A059"/><circle cx="50" cy="50" r="8" fill="#FFFFFF"/><text x="50" y="92" font-size="8" fill="#C5A059" text-anchor="middle" font-weight="bold">MOI</text></svg>
                         </div>
-                        <div><h3>Ministry of Interior</h3><span>Republic of South Sudan</span></div>
+                        <div class="footer-brand">
+
+    <div class="footer-logo">
+        🏛️
+    </div>
+
+    <div>
+        <h3>Ministry of Interior</h3>
+        <span>Republic of South Sudan</span>
+    </div>
+
+</div>
                     </div>
                     <p>The principal government institution responsible for internal security, public safety, and the rule of law across the Republic of South Sudan.</p>
                     <div class="footer-social"><a href="#">f</a><a href="#">𝕏</a><a href="#">▶</a><a href="#">📷</a></div>
