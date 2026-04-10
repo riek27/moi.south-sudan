@@ -137,6 +137,82 @@
         .card-body { padding: 24px 20px; text-align: center; flex: 1; }
         .leader-card h4 { font-size: 1.05rem; color: var(--primary-dark); margin-bottom: 6px; font-weight: 800; }
         .leader-card .title { font-size: 0.8rem; color: var(--gold-dark); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        /* Department Cards (Leadership section) */
+.dept-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
+    border: 2px solid var(--gray-200);
+    transition: var(--transition);
+    padding: 32px 24px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dept-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--gold);
+}
+
+.dept-icon {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 6px 14px rgba(10, 30, 61, 0.2);
+    border: 2px solid rgba(197, 160, 89, 0.3);
+    color: var(--white);
+}
+
+.dept-card h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+}
+
+.dept-card p {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: 0;
+    flex: 1;
+}
+
+/* Responsive grid remains same as .leadership-grid */
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+@media (max-width: 1024px) {
+    .leadership-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .leadership-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .leadership-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
         /* Directorates / Services / News grids */
         .directorates-grid, .services-grid, .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
@@ -360,23 +436,63 @@
     </div>
 </section>
 
-<!-- LEADERSHIP (EXPANDED) -->
+<!-- ===== LEADERSHIP (DEPARTMENTS) ===== -->
 <section class="section section-alt" id="leadership">
     <div class="container">
         <div class="section-header">
             <div class="overline">Leadership</div>
             <h2>Ministry Leadership</h2>
-            <p>Dedicated leaders committed to national security and public service excellence.</p>
+            <p>Dedicated departments committed to national security and public service excellence.</p>
         </div>
         <div class="leadership-grid">
-            <div class="leader-card"><div class="leader-photo"><div class="avatar">👤</div></div><div class="card-body"><h4>Gen. Aleu Ayieny Aleu</h4><div class="title">Minister of Interior</div></div></div>
-            <div class="leader-card"><div class="leader-photo"><div class="avatar">👤</div></div><div class="card-body"><h4>Hon. Mangar Buong Aluenge</h4><div class="title">Deputy Minister</div></div></div>
-            <div class="leader-card"><div class="leader-photo"><div class="avatar">👤</div></div><div class="card-body"><h4>Hon. Mary Achol</h4><div class="title">Advisor</div></div></div>
-            <div class="leader-card"><div class="leader-photo"><div class="avatar">👤</div></div><div class="card-body"><h4>Dr. James Wani</h4><div class="title">Technical Advisor</div></div></div>
-            <div class="leader-card"><div class="leader-photo"><div class="avatar">👤</div></div><div class="card-body"><h4>Mr. Peter Majak</h4><div class="title">DG Admin & Finance</div></div></div>
-            <div class="leader-card"><div class="leader-photo"><div class="avatar">👤</div></div><div class="card-body"><h4>Ms. Grace Lado</h4><div class="title">DG Research & Planning</div></div></div>
-            <div class="leader-card"><div class="leader-photo"><div class="avatar">👤</div></div><div class="card-body"><h4>Adv. John Lual</h4><div class="title">DG Legal Administration</div></div></div>
-            <div class="leader-card"><div class="leader-photo"><div class="avatar">👤</div></div><div class="card-body"><h4>Mr. Santino Deng</h4><div class="title">DG Public Relations</div></div></div>
+            <!-- Minister of Interior -->
+            <div class="dept-card">
+                <div class="dept-icon">🏛️</div>
+                <h4>Minister of Interior</h4>
+                <p>The political head of the Ministry, responsible for overall policy direction, strategic leadership, and representation of the Ministry in Cabinet and Parliament.</p>
+            </div>
+            <!-- Deputy Minister -->
+            <div class="dept-card">
+                <div class="dept-icon">📋</div>
+                <h4>Deputy Minister</h4>
+                <p>Assists the Minister in executive duties, oversees special projects, and coordinates inter‑directorate activities to ensure seamless implementation of policies.</p>
+            </div>
+            <!-- Advisors -->
+            <div class="dept-card">
+                <div class="dept-icon">💬</div>
+                <h4>Advisors</h4>
+                <p>Provide expert counsel on political, security, and administrative matters to the Minister and senior leadership, ensuring informed decision‑making.</p>
+            </div>
+            <!-- Technical Advisor -->
+            <div class="dept-card">
+                <div class="dept-icon">🔧</div>
+                <h4>Technical Advisor</h4>
+                <p>Offers specialised technical guidance on law enforcement modernisation, infrastructure, and capacity‑building initiatives within the Ministry.</p>
+            </div>
+            <!-- DG Administration & Finance -->
+            <div class="dept-card">
+                <div class="dept-icon">💰</div>
+                <h4>DG Administration & Finance</h4>
+                <p>Manages human resources, budgeting, procurement, and financial accountability across all Ministry directorates and support services.</p>
+            </div>
+            <!-- DG Research, Planning & Statistics -->
+            <div class="dept-card">
+                <div class="dept-icon">📊</div>
+                <h4>DG Research, Planning & Statistics</h4>
+                <p>Drives evidence‑based policy through data collection, strategic planning, and monitoring and evaluation of Ministry programmes.</p>
+            </div>
+            <!-- DG Legal Administration -->
+            <div class="dept-card">
+                <div class="dept-icon">⚖️</div>
+                <h4>DG Legal Administration</h4>
+                <p>Ensures legal compliance, drafts legislation and regulations, and provides legal advice to all directorates and the Minister's office.</p>
+            </div>
+            <!-- DG Public Relations -->
+            <div class="dept-card">
+                <div class="dept-icon">📢</div>
+                <h4>DG Public Relations</h4>
+                <p>Manages communication with the public and media, promotes transparency, and handles crisis communication and public awareness campaigns.</p>
+            </div>
         </div>
     </div>
 </section>
