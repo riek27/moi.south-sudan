@@ -242,20 +242,141 @@
         .read-more { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; font-weight: 700; color: var(--primary); text-decoration: none; transition: var(--transition); }
         .read-more:hover { color: var(--gold-dark); gap: 12px; }
 
-        /* NPS section */
-        .nps-section { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); padding: 100px 0; }
-        .nps-header { display: flex; align-items: center; gap: 24px; margin-bottom: 56px; padding-bottom: 28px; border-bottom: 2px solid rgba(255,255,255,0.1); }
-        .nps-header .shield { width: 72px; height: 72px; border-radius: 18px; background: rgba(197,160,89,0.15); border: 2px solid rgba(197,160,89,0.4); display: flex; align-items: center; justify-content: center; font-size: 2rem; }
-        .nps-header-text h2 { font-family: 'Merriweather', serif; font-size: 2rem; color: var(--white); }
-        .nps-header-text p { color: rgba(255,255,255,0.7); }
-        .nps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .nps-card { background: rgba(255,255,255,0.06); border: 2px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 28px 24px; display: flex; align-items: center; gap: 16px; transition: var(--transition); }
-        .nps-card:hover { background: rgba(255,255,255,0.12); border-color: var(--gold); }
-        .nps-icon { width: 50px; height: 50px; border-radius: 12px; background: rgba(197,160,89,0.15); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
-        .nps-card h5 { color: var(--white); }
-        .btn-gold-outline { background: transparent; color: var(--gold); border: 2.5px solid var(--gold); padding: 14px 40px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); }
-        .btn-gold-outline:hover { background: var(--gold); color: var(--primary-dark); }
+           /* ===== NPS EXPANDED ===== */
+        .nps-section {
+            background: linear-gradient(135deg, var(--gov-primary-dark) 0%, var(--gov-primary) 100%);
+            padding: var(--space-20) 0;
+            position: relative;
+            overflow: hidden;
+        }
 
+        .nps-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 25% 25%, rgba(252,209,22,0.06) 0%, transparent 35%),
+                radial-gradient(circle at 75% 75%, rgba(27,107,58,0.08) 0%, transparent 40%),
+                url("image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .nps-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .nps-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-5);
+            margin-bottom: var(--space-12);
+            padding-bottom: var(--space-6);
+            border-bottom: 2px solid rgba(255,255,255,0.12);
+        }
+
+        .nps-header .shield {
+            width: 72px;
+            height: 72px;
+            border-radius: var(--radius-xl);
+            background: rgba(252, 209, 22, 0.15);
+            border: 2px solid rgba(252, 209, 22, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .nps-header-text h2 {
+            font-family: var(--font-serif);
+            font-size: var(--text-2xl);
+            color: var(--gov-white);
+            margin-bottom: var(--space-2);
+            font-weight: 700;
+        }
+
+        .nps-header-text p {
+            color: rgba(255,255,255,0.75);
+            font-size: var(--text-base);
+            line-height: 1.6;
+        }
+
+        .nps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-4);
+            margin-bottom: var(--space-8);
+        }
+
+        .nps-card {
+            background: rgba(255,255,255,0.08);
+            border: 2px solid rgba(255,255,255,0.12);
+            border-radius: var(--radius-lg);
+            padding: var(--space-5) var(--space-4);
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            transition: var(--transition-base);
+            cursor: pointer;
+        }
+
+        .nps-card:hover,
+        .nps-card:focus {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(252, 209, 22, 0.4);
+            transform: translateY(-4px);
+            outline: none;
+        }
+
+        .nps-card .nps-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: var(--radius-md);
+            background: rgba(252, 209, 22, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .nps-card h5 {
+            font-size: 0.9rem;
+            color: var(--gov-white);
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .nps-card span {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .nps-cta {
+            text-align: center;
+        }
+
+        .btn-gold-outline {
+            background: transparent;
+            color: var(--gov-accent);
+            border: 2.5px solid var(--gov-accent);
+            padding: var(--space-4) var(--space-10);
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition-base);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .btn-gold-outline:hover,
+        .btn-gold-outline:focus {
+            background: var(--gov-accent);
+            color: var(--gov-primary-dark);
+            transform: translateY(-2px);
+        }
         /* States grid */
         .states-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
         .state-card { background: var(--white); border: 2px solid var(--gray-200); border-radius: var(--radius-lg); padding: 22px 18px; display: flex; align-items: center; gap: 14px; transition: var(--transition); }
@@ -516,27 +637,65 @@
     </div>
 </section>
 
-<!-- NPS EXPANDED -->
-<section class="nps-section" id="nps">
-    <div class="container nps-content">
-        <div class="nps-header">
-            <div class="shield">🛡️</div>
-            <div class="nps-header-text">
-                <h2>National Police Service</h2>
-                <p>The largest directorate under the Ministry — protecting communities across South Sudan.</p>
+<!-- ===== NPS EXPANDED ===== -->
+        <section class="nps-section" id="nps" aria-labelledby="nps-title">
+            <div class="container nps-content">
+                <div class="nps-header">
+                    <div class="shield" aria-hidden="true">🛡️</div>
+                    <div class="nps-header-text">
+                        <h2 id="nps-title">National Police Service</h2>
+                        <p>The largest directorate under the Ministry — protecting communities across South Sudan. Currently undergoing major restructuring for 2026 elections.</p>
+                    </div>
+                </div>
+                <div class="nps-grid">
+                    <div class="nps-card" tabindex="0">
+                        <div class="nps-icon" aria-hidden="true">🔍</div>
+                        <div>
+                            <h5>CID Directorate</h5>
+                            <span>Criminal Investigation Department</span>
+                        </div>
+                    </div>
+                    <div class="nps-card" tabindex="0">
+                        <div class="nps-icon" aria-hidden="true">🚗</div>
+                        <div>
+                            <h5>Traffic Directorate</h5>
+                            <span>Road Safety & Traffic Management</span>
+                        </div>
+                    </div>
+                    <div class="nps-card" tabindex="0">
+                        <div class="nps-icon" aria-hidden="true">🛂</div>
+                        <div>
+                            <h5>Immigration & Passport</h5>
+                            <span>Border Control & Travel Documents</span>
+                        </div>
+                    </div>
+                    <div class="nps-card" tabindex="0">
+                        <div class="nps-icon" aria-hidden="true">⚙️</div>
+                        <div>
+                            <h5>Operations Directorate</h5>
+                            <span>Field Operations & Response</span>
+                        </div>
+                    </div>
+                    <div class="nps-card" tabindex="0">
+                        <div class="nps-icon" aria-hidden="true">👥</div>
+                        <div>
+                            <h5>Human Resource Development</h5>
+                            <span>Personnel Management & Welfare</span>
+                        </div>
+                    </div>
+                    <div class="nps-card" tabindex="0">
+                        <div class="nps-icon" aria-hidden="true">🎓</div>
+                        <div>
+                            <h5>Training Directorate</h5>
+                            <span>Police Training & Capacity Building</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="nps-cta">
+                    <a href="#" class="btn-gold-outline">View Full Structure <span aria-hidden="true">→</span></a>
+                </div>
             </div>
-        </div>
-        <div class="nps-grid">
-            <div class="nps-card"><div class="nps-icon">🔍</div><div><h5>CID Directorate</h5><span>Criminal Investigation</span></div></div>
-            <div class="nps-card"><div class="nps-icon">🚗</div><div><h5>Traffic Directorate</h5><span>Road Safety</span></div></div>
-            <div class="nps-card"><div class="nps-icon">🛂</div><div><h5>Immigration & Passport</h5><span>Border Control</span></div></div>
-            <div class="nps-card"><div class="nps-icon">⚙️</div><div><h5>Operations</h5><span>Field Response</span></div></div>
-            <div class="nps-card"><div class="nps-icon">👥</div><div><h5>HR Development</h5><span>Personnel Welfare</span></div></div>
-            <div class="nps-card"><div class="nps-icon">🎓</div><div><h5>Training</h5><span>Capacity Building</span></div></div>
-        </div>
-        <div class="nps-cta"><a href="#" class="btn-gold-outline">View Full Structure →</a></div>
-    </div>
-</section>
+        </section>
 
 <!-- STATES -->
 <section class="section section-alt" id="states">
